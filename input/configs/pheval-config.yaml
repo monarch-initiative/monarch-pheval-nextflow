@@ -1,0 +1,68 @@
+directories:
+  data: data
+  tmp: data/tmp
+
+corpora:
+  - id: lirical-default
+    corpus: lirical
+    variant: default
+    custom_variants:
+      - id: no_phenotype
+  - id: lirical-small
+    corpus: lirical
+    variant: small_version
+    custom_variants:
+      - id: no_phenotype
+
+configs:
+  - name: Default configuration for Exomiser 13
+    id: exomiser-13.3.0
+    tool: exomiser
+    tool_version: 13.3.0
+    tool_options:
+      exomiser_phenotype: 2309
+  - name: Default configuration for Exomiser 14
+    id: exomiser-14.0.0
+    tool: exomiser
+    tool_version: 14.0.0
+    tool_options:
+      exomiser_phenotype: 2402
+  - name: S01 - Exomiser 13 with semantic similarity profiles (PHENIO Monarch), 0.4 threshold
+    id: S01
+    tool: exomiser
+    tool_version: 13.3.0
+    tool_options:
+      exomiser_phenotype: 2309
+      exomiser_semsim_ingest:
+        - ./01_input/semsim/phenio-monarch-hp-hp.0.4.semsimian.sql
+        - ./01_input/semsim/phenio-monarch-hp-mp.0.4.semsimian.sql
+        - ./01_input/semsim/phenio-monarch-hp-zp.0.4.semsimian.sql
+  - name: S02 - Exomiser 13 with semantic similarity profiles (PHENIO Equivalent), 0.4 threshold
+    id: S02
+    tool: exomiser
+    tool_version: 13.3.0
+    tool_options:
+      exomiser_phenotype: 2309
+      exomiser_semsim_ingest:
+        - ./01_input/semsim/phenio-equivalent-hp-hp.0.4.semsimian.sql
+        - ./01_input/semsim/phenio-equivalent-hp-mp.0.4.semsimian.sql
+        - ./01_input/semsim/phenio-equivalent-hp-zp.0.4.semsimian.sql
+
+runs:
+  - name: Default configuration for Exomiser 13 on LIRICAL Corpus
+    corpus: lirical
+    corpus_variant: default
+    configId: exomiser-13.3.0
+  - name: Default configuration for Exomiser 14 on LIRICAL Corpus
+    corpus: lirical
+    corpus_variant: default
+    configId: exomiser-14.0.0
+  - name: S01 on LIRICAL Corpus
+    corpus: lirical
+    corpus_variant: default
+    configId: S01
+  - name: S02 on LIRICAL Corpus
+    corpus: lirical
+    corpus_variant: default
+    configId: S02
+ 
