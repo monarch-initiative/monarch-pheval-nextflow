@@ -21,7 +21,7 @@ workflow {
 
     runners = prepare_runners(yaml_config).toList()
     corpora = prepare_corpora(yaml_config).toList()
-    // runs = Channel.from(yaml_config.runs)
+    runs = Channel.from(yaml_config.runs)
 
-    // run_pheval(runs, runners, corpora)
+    run_pheval(runs, runners, corpora)
 }

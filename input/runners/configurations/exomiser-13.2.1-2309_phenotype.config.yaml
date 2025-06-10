@@ -11,10 +11,10 @@ tool_specific_configuration_options:
   application_properties:
     remm_version:
     cadd_version:
-    hg19_data_version: 2309
+    hg19_data_version: '2309'
     hg19_local_frequency_path:
-    hg38_data_version: 2309
-    phenotype_data_version: 2309
+    hg38_data_version: '2309'
+    phenotype_data_version: '2309'
     cache_type:
     cache_caffeine_spec:
   post_process:

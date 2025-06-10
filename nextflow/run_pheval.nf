@@ -20,6 +20,8 @@ process run_pheval {
     def (runnerConfig, runnerPath) = runners.find { it[0].id == run.configId }
     def (corpusConfig, corpusPath) = corpora.find { it[0].corpus == run.corpus && it[0].variant == run.corpus_variant }
     """
+    export PYSTOW_HOME=\$PWD
+    export MPLCONFIGDIR=\$PWD
     mkdir ${runId}
     pheval run \
         --input-dir \$(realpath ${runnerPath}) \
