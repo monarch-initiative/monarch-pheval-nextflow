@@ -51,8 +51,9 @@ process prepare_lirical_corpora {
     script:
     def corpusDir = "${corpus.corpus}-${corpus.variant}_prepared"
     """
+    export PYSTOW_HOME=\$PWD
     mkdir -p ${corpusDir}
-    cp ${params.home}/01_input/testdata/template_vcf/template_exome_hg19.vcf.gz ${corpusDir}/
+    cp ${params.home}/input/testdata/template_vcf/template_exome_hg19.vcf.gz ${corpusDir}/
     cp -r ${params.corporaDir}/${corpus.corpus}/${corpus.variant}/phenopackets ${corpusDir}/
 	pheval-utils create-spiked-vcfs \
 		--hg19-template-vcf \$PWD/${corpusDir}/template_exome_hg19.vcf.gz \

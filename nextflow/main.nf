@@ -5,7 +5,7 @@ import groovy.yaml.YamlSlurper
 yamlSlurper = new YamlSlurper()
 
 params.home = "$PHEVAL_HOME"
-params.phenotypeDir = "$PHEVAL_HOME/input/data/phenotype"
+params.phenotypeDir = "$PHEVAL_HOME/input/phenotype"
 params.runnersDir = "$PHEVAL_HOME/input/runners"
 params.corporaDir = "$PHEVAL_HOME/input/corpora"
 params.config = "$PHEVAL_HOME/input/configs/pheval-config.yaml"
@@ -21,7 +21,7 @@ workflow {
 
     runners = prepare_runners(yaml_config).toList()
     corpora = prepare_corpora(yaml_config).toList()
-    runs = Channel.from(yaml_config.runs)
+    // runs = Channel.from(yaml_config.runs)
 
-    run_pheval(runs, runners, corpora)
+    // run_pheval(runs, runners, corpora)
 }

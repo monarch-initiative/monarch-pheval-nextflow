@@ -1,0 +1,3 @@
+FROM nextflow/nextflow:24.10.5
+
+RUN yum install -y util-linux

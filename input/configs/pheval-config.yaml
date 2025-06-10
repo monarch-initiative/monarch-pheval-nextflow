@@ -34,9 +34,9 @@ configs:
     tool_options:
       exomiser_phenotype: 2309
       exomiser_semsim_ingest:
-        - ./01_input/semsim/phenio-monarch-hp-hp.0.4.semsimian.sql
-        - ./01_input/semsim/phenio-monarch-hp-mp.0.4.semsimian.sql
-        - ./01_input/semsim/phenio-monarch-hp-zp.0.4.semsimian.sql
+        - ./input/semsim/phenio-monarch-hp-hp.0.4.semsimian.sql
+        - ./input/semsim/phenio-monarch-hp-mp.0.4.semsimian.sql
+        - ./input/semsim/phenio-monarch-hp-zp.0.4.semsimian.sql
   - name: S02 - Exomiser 13 with semantic similarity profiles (PHENIO Equivalent), 0.4 threshold
     id: S02
     tool: exomiser
@@ -44,9 +44,9 @@ configs:
     tool_options:
       exomiser_phenotype: 2309
       exomiser_semsim_ingest:
-        - ./01_input/semsim/phenio-equivalent-hp-hp.0.4.semsimian.sql
-        - ./01_input/semsim/phenio-equivalent-hp-mp.0.4.semsimian.sql
-        - ./01_input/semsim/phenio-equivalent-hp-zp.0.4.semsimian.sql
+        - ./input/semsim/phenio-equivalent-hp-hp.0.4.semsimian.sql
+        - ./input/semsim/phenio-equivalent-hp-mp.0.4.semsimian.sql
+        - ./input/semsim/phenio-equivalent-hp-zp.0.4.semsimian.sql
 
 runs:
   - name: Default configuration for Exomiser 13 on LIRICAL Corpus
